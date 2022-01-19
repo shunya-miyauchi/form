@@ -44,5 +44,44 @@
                 </form>    
             </div>
         </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(function(){
+            $("body").on('mouseenter',function(){
+                $(this).css('background-color','yellow');
+            })
+            .on('mouseleave',function(){
+                $(this).css('background-color','rgba(221, 221, 252, 0.87)');
+            })
+            
+
+            if($("#textarea").val().length == 0){
+                $(".submit").prop("disabled",true).css("opacity","0.5");
+            }
+            $("#textarea").on('keydown keyup keypress change',function() {
+                 if($(this).val().length == 0){
+                  $(".submit").prop("disabled",true).css("opacity","0.5")
+                } else if($(this).val().length > 30){
+                    $(".submit").prop("disabled",true).css("opacity","0.5")
+                } else {
+                    $(".submit").prop("disabled",false).css("opacity","1")
+                }
+            })
+           
+
+            $("#name,#name2").on("change",function(){
+                $(".haveto").css("background-color","orange")
+            })
+        
+        
+        
+        })
+
+
+    </script>
+    
     </body>
 </html>
